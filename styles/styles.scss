@@ -1,0 +1,149 @@
+/*PRIMARY COLORS*/
+$Red: hsl(0, 78%, 62%);
+$Cyan: hsl(180, 62%, 55%);
+$Orange: hsl(34, 97%, 64%);
+$Blue: hsl(212, 86%, 64%);
+/*NEUTRAL COLORS*/
+$Very-Dark-Blue: hsl(234, 12%, 34%);
+$Grayish-Blue: hsl(229, 6%, 66%);
+$Very-Light-Gray: hsl(0, 0%, 98%);
+
+/*MOVILE STYLES*/
+*{
+    box-sizing: border-box;
+}
+body{
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    min-height: 650px;
+    font-size: 15px;
+    padding: 30px;
+    background-color: $Very-Light-Gray;
+    main{
+        header{
+            max-width: 400px;
+            width: 100%;
+            margin: 0 auto;
+            h1{
+                color: $Very-Dark-Blue;
+                font-weight: 200;
+                font-size: 1.6rem;
+                line-height: 1.5;
+                span{
+                    font-weight: 600;
+                }
+            }
+            p{
+                line-height: 1.6;
+                color: $Grayish-Blue;
+            }
+        }
+        section{
+            margin-top: 80px;
+            .cards{
+                margin: 0 auto;
+                width: 100%;
+                max-width: 312px;
+                height: 230px;
+                text-align: start;
+                padding: 8px 26px 20px 28px;
+                border-radius: 7px;
+                background-color: white;
+                box-shadow: 0px 8px 25px -15px $Grayish-Blue, 0px 8px 25px -15px $Blue;
+                margin-bottom: 30px;
+                h2{
+                    color: $Very-Dark-Blue;
+                }
+                p{
+                    color: $Grayish-Blue;
+                    font-size:.8rem;
+                    line-height: 1.8;
+                    margin-right: 5px;
+                }
+                &:first-child{
+                    border-top: 4px solid $Cyan;
+                }
+                &:nth-child(2){
+                    border-top: 4px solid $Red;
+                }
+                &:nth-child(3){
+                    border-top: 4px solid $Orange;
+                }
+                &:last-child{
+                    border-top: 4px solid $Blue;
+                }
+                .icon{
+                    position: relative;
+                    left: 74%;
+                }
+            }
+        }
+    }
+}
+@media screen and (min-width: 700px){
+    body{
+        height: auto;
+        main{
+            display: grid;
+            height: auto;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+            header{
+                grid-row: 1/2;
+                grid-column: 1/5;
+                margin: 0 auto;
+                height: 190px;
+            }
+            section{
+                grid-column: 1/5;
+                grid-row: 2/5;
+                margin-top: 80px;
+                display: flex;
+                flex-wrap: wrap;
+                height: 68%;
+                    }
+                }
+        }
+}
+@media screen and (min-width: 1300px){
+    body{
+        height: auto;
+        main{
+            header{
+                max-width: 500px;
+                h1{
+                    font-size: 2rem;
+                }
+                p{
+                    margin: 0;
+                    font-size: .9rem;
+                }
+            }
+            section{
+                flex-wrap: nowrap;
+                height: 68%;
+                position: relative;
+                .cards{
+                    position: absolute;
+                    max-width: 334px;
+                    height: 241px;
+                    &:first-child{
+                        top: 30%;
+                        left: 11.5%;
+                    }
+                    &:nth-child(2){
+                        left: 38%;
+                        bottom: 36%;
+                    }
+                    &:nth-child(3){
+                        top: 64%;
+                        left: 38%;
+                    }
+                    &:last-child{
+                        top: 30%;
+                        left: 64.5%;
+                }
+                    }
+                }
+        }
+}}
